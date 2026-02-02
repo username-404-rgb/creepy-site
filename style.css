@@ -1,0 +1,21 @@
+body{
+    background-color: rgb(190, 50, 15); 
+    color: rgb(255, 60, 10);
+    font-family: fantasy;
+    text-align: center;
+    text-decoration: none;
+}
+a {
+    text-decoration: none;
+}
+a:link, a:visited {
+  color: rgb(255, 60, 10);
+}
+nav li, nav li h1 {
+    font-size: medium;
+    display: inline;
+    margin-right: 30px;
+}
+nav li h1 {
+    color: blue;
+}
