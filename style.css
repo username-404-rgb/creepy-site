@@ -4,6 +4,12 @@ body{
     font-family: fantasy;
     text-align: center;
     text-decoration: none;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    place-items: center;
+
+    .index .House No UI
 }
 a {
     text-decoration: none;
