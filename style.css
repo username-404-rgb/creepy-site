@@ -25,16 +25,45 @@ nav li h1 {
     background-color: rgb(0, 255, 255);
 }
 
+.flower_1 {
+  position: absolute;
+  top: 0px;
+  left: 540px;
+}
+
+.flower_2 {
+  position: absolute;
+  top: 0px;
+  right: 540px;
+}
+
 .house_ext {
   position: absolute;
   top: 0px;
   left: 200px;
 }
 
+.entry_hall {
+  position: absolute;
+  top: 450px;
+  left: 500px;
+}
 .enter_house {
   position: absolute;
   top: 510px;
   left: 785px;
+}
+
+.enter_int {
+  position: absolute;
+  top: 310px;
+  left: 645px;
+}
+
+.backwards {
+  position: absolute;
+  top: 620px;
+  left: 765px;
 }
 
 .entry {
