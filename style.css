@@ -50,8 +50,8 @@ nav li h1 {
 }
 .enter_house {
   position: absolute;
-  top: 510px;
-  left: 785px;
+  top: 540px;
+  left: 810px;
 }
 
 .enter_int {
@@ -78,8 +78,9 @@ nav li h1 {
   left: 325px;
 }
 
-.face {
+.enter_vent {
   position: absolute;
-  top: 0px;
-  left: 1238px;
+  top: 120px;
+  left: 795px;
 }
+
