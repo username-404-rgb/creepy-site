@@ -18,6 +18,14 @@ nav li, nav li h1 {
     margin-right: 30px;
 }
 
+.disabled {
+  pointer-events: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
 .flower_1 {
   position: absolute;
   top: 0px;

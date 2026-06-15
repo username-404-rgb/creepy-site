@@ -8,11 +8,32 @@
     </head>
     <body>
         <img src="images\Bedroom.png", alt="An Old Memory", width="71%", class="entry">
-        <a href="hallway.html">
+        <a href="upstairs.html">
             <img src="images\Arrow_D.png", alt="Come In", width="5%", class="backwards"> 
         </a></br>
         <a href="upstairs.html">
             <img src="images\Arrow_R.png", alt="Come In", width="5%", class="vent2"> 
         </a></br>
+        <a id="unlockLink" href="#">
+            <img src="images/Switch.png" alt="Come In" width="6%" class="Backwards"> 
+        </a>
+
+    <script> // Key Section
+        const unlockLink = document.getElementById('unlockLink');
+        if (sessionStorage.getItem('linkUnlocked') === 'true') {
+            disableAndHideUnlockLink();
+        }
+        unlockLink.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            sessionStorage.setItem('linkUnlocked', 'true');
+            disableAndHideUnlockLink();
+        });
+
+        function disableAndHideUnlockLink() {
+            unlockLink.classList.add('disabled', 'hidden');
+            unlockLink.style.pointerEvents = 'none';
+        }
+    </script>
+
     </body>
 </html>

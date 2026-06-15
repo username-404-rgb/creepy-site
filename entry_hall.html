@@ -8,11 +8,26 @@
     </head>
     <body>
         <img src="images\Entry.png", alt="An Old Memory", width="74%", class="entry">
-        <a href="vents_1.html">
-            <img src="images\Invisible.png", alt="Come In", width="6%", class="enter_vent"> 
+        <a id="targetLink" href="vents_1.html" class="disabled">
+            <img src="images/Invisible.png" alt="Come In" width="6%" class="enter_vent"> 
         </a>
         <a href="hallway.html">
             <img src="images\Arrow_U.png", alt="Come In", width="5%", class="entry_hall"> 
         </a></br>
+
+    <script> // Lock Section
+        const targetLink = document.getElementById('targetLink');
+        if (sessionStorage.getItem('linkUnlocked') === 'true') {
+            enableTargetLink();
+        }
+        unlockLink.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            sessionStorage.setItem('linkUnlocked', 'true');
+            enableTargetLink();
+        });
+        function enableTargetLink() {
+            targetLink.classList.remove('disabled');
+        }
+    </script>
     </body>
 </html>
