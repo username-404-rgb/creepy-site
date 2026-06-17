@@ -7,13 +7,50 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <img src="images\Overgrown_1.png", alt="An Old Memory", width="71%", class="entry">
-        <img src="images\Arm.png", alt="An Old Memory", width="4%", class="arm">
+        <img src="images\Overgrown_2.png", alt="Overgrown_2", width="71%", class="entry">
+        <a id="unlockLink"> //Make not a link
+            <img src="images\Overgrown_1.png", alt="Overgrown_1", width="71%", class="entry">
+
         <a href="hallway.html">
-            <img src="images\Arrow_D.png", alt="Come In", width="5%", class="backwards"> 
+            <img src="images\Arrow_D.png", alt="Arrow_D", width="5%", class="backwards"> 
         </a></br>
+
         <a href="upstairs.html">
-            <img src="images\Arrow_R.png", alt="Come In", width="5%", class="vent2"> 
-        </a></br>
+            <img src="images\Arrow_R.png", alt="Arrow_R", width="5%", class="vent2"> 
+        </a></br> // Make Dissapear
+
+        <a id="targetLink" href="#" class="disabled1 hidden1">
+            <img src="images\Arm.png", alt="Arm", width="3.25%", class="arm"> 
+        </a>
+    <script> // Lock Section
+        const targetLink = document.getElementById('targetLink');
+        if (sessionStorage.getItem('linkUnlocked') === 'true') {
+            enableTargetLink();
+        }
+        unlockLink.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            sessionStorage.setItem('linkUnlocked', 'true');
+            enableTargetLink();
+        });
+        function enableTargetLink() {
+            targetLink.classList.remove('disabled1', 'hidden1');
+        }
+    </script>
+    <script> // Key Section
+        const unlockLink = document.getElementById('unlockLink');
+        if (sessionStorage.getItem('linkUnlocked') === 'true') {
+            disableAndHideUnlockLink();
+        }
+        unlockLink.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            sessionStorage.setItem('linkUnlocked', 'true');
+            disableAndHideUnlockLink();
+        });
+
+        function disableAndHideUnlockLink() {
+            unlockLink.classList.add('disabled1', 'hidden1');
+            unlockLink.style.pointerEvents = 'none';
+        }
+    </script>
     </body>
 </html>
