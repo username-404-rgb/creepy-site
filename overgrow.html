@@ -10,26 +10,30 @@
         <img src="images\Overgrown_2.png", alt="Overgrown_2", width="71%", class="entry">
         <a id="unlockLink"> //Make not a link
             <img src="images\Overgrown_1.png", alt="Overgrown_1", width="71%", class="entry">
-
+            </a></br>
         <a href="hallway.html">
             <img src="images\Arrow_D.png", alt="Arrow_D", width="5%", class="backwards"> 
         </a></br>
 
-        <a id="unlockLink" href="upstairs.html">
+        <a id="upstairsLink" href="upstairs.html">
             <img src="images\Arrow_R.png", alt="Arrow_R", width="5%", class="vent2"> 
         </a>
 
     <script> // Lock Section
         const targetLink = document.getElementById('targetLink');
+        const ul = document.getElementById('unlockLink');
         if (sessionStorage.getItem('linkUnlocked') === 'true') {
-            enableTargetLink();
+            if (targetLink) enableTargetLink();
         }
-        unlockLink.addEventListener('click', function(event) {
-            event.preventDefault(); 
-            sessionStorage.setItem('linkUnlocked', 'true');
-            enableTargetLink();
-        });
+        if (ul) {
+            ul.addEventListener('click', function(event) {
+                event.preventDefault(); 
+                sessionStorage.setItem('linkUnlocked', 'true');
+                if (targetLink) enableTargetLink();
+            });
+        }
         function enableTargetLink() {
+            if (!targetLink) return;
             targetLink.classList.remove('disabled1', 'hidden1');
         }
     </script>
@@ -45,8 +49,8 @@
         });
 
         function disableAndHideUnlockLink() {
-            unlockLink.classList.add('disabled1', 'hidden1');
-            unlockLink.style.pointerEvents = 'none';
+            upstairsLink.classList.add('disabled1', 'hidden1');
+            upstairsLink.style.pointerEvents = 'none';
         }
     </script>
     </body>
