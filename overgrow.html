@@ -15,9 +15,9 @@
             <img src="images\Arrow_D.png", alt="Arrow_D", width="5%", class="backwards"> 
         </a></br>
 
-        <a href="upstairs.html">
+        <a id="unlockLink" href="upstairs.html">
             <img src="images\Arrow_R.png", alt="Arrow_R", width="5%", class="vent2"> 
-        </a></br> // Make Disappear
+        </a>
 
     <script> // Lock Section
         const targetLink = document.getElementById('targetLink');
@@ -39,7 +39,7 @@
             disableAndHideUnlockLink();
         }
         unlockLink.addEventListener('click', function(event) {
-            event.preventDefault(); 
+            event.preventDefault();
             sessionStorage.setItem('linkUnlocked', 'true');
             disableAndHideUnlockLink();
         });
